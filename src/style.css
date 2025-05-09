@@ -1,0 +1,28 @@
+/* Reset de margens e preenchimentos */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Garantir altura total */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Importar a fonte globalmente */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+
+/* Estilos globais */
+body {
+  background-color: #fff; /* ou outra cor */
+}
+
+/* Garantir altura para o container principal */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
