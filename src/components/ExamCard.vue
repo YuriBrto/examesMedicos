@@ -8,24 +8,29 @@
   </template>
   
   <script setup>
-  defineProps({
-    exam: Object
-  })
-  
-  // Estilo condicional para status
-  const statusClass = computed(() => {
-    switch (exam.status.toLowerCase()) {
-      case 'finalizado':
-        return 'status-finalizado'
-      case 'em aberto':
-        return 'status-aberto'
-      case 'encaminhado':
-        return 'status-encaminhado'
-      default:
-        return ''
-    }
-  })
-  </script>
+import { computed } from 'vue'
+
+// Definição correta da prop 'exam'
+const props = defineProps({
+  exam: Object
+});
+
+// Estilo condicional para status
+const statusClass = computed(() => {
+  const { exam } = props;
+  switch (exam.status.toLowerCase()) {
+    case 'finalizado':
+      return 'status-finalizado';
+    case 'em aberto':
+      return 'status-aberto';
+    case 'encaminhado':
+      return 'status-encaminhado';
+    default:
+      return '';
+  }
+});
+</script>
+
   
   <style scoped lang="scss">
   .exam-card {

@@ -1,17 +1,18 @@
 <template>
     <div class="container">
       <header class="title">
-        <div class="svg-container">
-          <svg viewBox="0 0 800 400" class="svg">
-            <path
-              id="curve"
-              fill="#50c6d8"
-              d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z"
-            />
-          </svg>
-        </div>
-        <h1>Acompanhamento de pacientes</h1>
-      </header>
+  <div class="svg-container">
+    <svg viewBox="0 0 800 400" class="svg">
+      <path
+        id="curve"
+        fill="#50c6d8"
+        d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z"
+      />
+    </svg>
+    <h1 class="svg-title">Acompanhamento de pacientes</h1>
+  </div>
+</header>
+
   
       <main class="opcoes">
         <section class="escolhas">
@@ -55,6 +56,7 @@ html, body {
 }
 
 .container {
+  
   font-family: 'Ubuntu', sans-serif;
   color: #333;
   text-align: center;
@@ -63,14 +65,14 @@ html, body {
 }
 
 .title {
+  
   position: relative;
-  height: 100vh; // ocupa toda a tela
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
   overflow: hidden;
-  padding-top: 200px;
+  
 
   h1 {
     animation: fadeIn 1s ease-out;
@@ -81,20 +83,47 @@ html, body {
     text-shadow: 0 2px 5px rgba(0,0,0,0.4);
   }
   .escolhas li {
+    
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.3s;
 }
+@media (min-width: 768px) {
+  .escolhas {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+}
 
-  .svg-container {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+
+.svg-container {
+    position: relative;
+    width: 100%;
+   overflow: hidden;
+ 
 
     .svg {
+      display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: block;
+      margin: 0;
+    }
+
+    .svg-title {
+      
+      position: absolute;
+      top: 65%; // ajuste conforme preferir
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: white;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      animation: fadeIn 1s ease-out;
     }
   }
 }
@@ -176,4 +205,13 @@ small {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 767px) {
+  .svg-title {
+    font-size: 1.2rem;
+    top: 70%; // ajuste fino para melhor alinhamento
+  }
+
+}
+
 </style>

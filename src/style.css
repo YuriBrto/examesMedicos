@@ -1,3 +1,7 @@
+/* Importar a fonte globalmente */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+
+
 /* Reset de margens e preenchimentos */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -9,11 +13,10 @@
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
   font-family: 'Ubuntu', sans-serif;
 }
 
-/* Importar a fonte globalmente */
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 
 /* Estilos globais */
 body {

@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.9.0",
+    "exames-medicos": "file:",
     "vue": "^3.5.13",
     "vue-router": "^4.5.1"
   },

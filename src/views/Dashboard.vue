@@ -20,14 +20,15 @@
   
   <script setup>
   import { onMounted } from 'vue';
-  import ExamCard from '../components/ExamCard.vue';
-  
+  import ExamCard from '../components/ExamCard.vue'
   // Dados de exemplo para exames
   const exams = [
     { id: 1, nome: 'Hemograma', status: 'Em aberto' },
     { id: 2, nome: 'Raio-X', status: 'Finalizado' },
     { id: 3, nome: 'Urina', status: 'Encaminhado' }
   ];
+  console.log(exams);
+  
   </script>
   
   <style scoped lang="scss">

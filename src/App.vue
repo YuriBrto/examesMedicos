@@ -4,22 +4,24 @@ import routes from './router'
 </script>
 
 <template>
-    <div>
-    <router-view />
-  </div>
+  <transition name="fade" mode="out-in">
+    <div class="router-wrapper">
+      <router-view />
+    </div>
+  </transition>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.router-wrapper {
+  /* Container para garantir a transição sem sobreposição de elementos */
+  position: relative;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 3.5s ease-in-out;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.fade-enter, .fade-leave-to /* .fade-leave-active em Vue 3 */ {
+  opacity: 0;
 }
 </style>
